@@ -18,7 +18,7 @@ TODAY=$(TZ='Asia/Shanghai' date +%Y%m%d) && sed -i "s/hostname='ImmortalWrt'/hos
 # TODAY=$(TZ='Asia/Shanghai' date +%Y%m%d) && sed -i "s/hostname='ImmortalWrt'/hostname='ImmortalWrt-24.10-6.6-${TODAY}'/" package/base-files/files/bin/config_generate
 
 # Modify filename, add date prefix
-TODAY=$(TZ='Asia/Shanghai' date +%Y%m%d) && sed -i 's|IMG_PREFIX:=|IMG_PREFIX:=${TODAY}-24.10-6.6-|' include/image.mk
+TODAY=$(TZ='Asia/Shanghai' date +%Y%m%d) && sed -i "s/IMG_PREFIX:=/IMG_PREFIX:=${TODAY}-24.10-6.6-/" include/image.mk
 
 sed -i 's/DISTRIB_DESCRIPTION=.*/DISTRIB_DESCRIPTION="ImmortalWrt By yegetables $(date +%Y%m%d)"/g' ./package/base-files/files/etc/openwrt_release
 
