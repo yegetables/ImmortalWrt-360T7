@@ -1,0 +1,10 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+sed -i "/option \(dns\|ping\|route\) '/s/'[^']*'/'taobao.com'/" /etc/config/luci
+sed -i "s/\(option command '\/bin\/login\)'/\1 -f root'/"  /etc/config/ttyd
+sed -i '/^[^#]*option check_signature/ s/^/#/'  /etc/opkg.conf  
+# mkdir -p /etc/smartdns/ip-set
+# grep -q "option http_proxy" /etc/opkg.conf || echo "option http_proxy http://192.168.6.50:10081">> /etc/opkg.conf
+
+exit 0

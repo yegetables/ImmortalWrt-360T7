@@ -12,3 +12,4 @@
 
 ### 添加第三方订阅源
 sed -i '$a src-git-full small https://github.com/kenzok8/small' feeds.conf.default
+echo "src-git fakehttp https://github.com/killadm/luci-app-fakehttp" >> feeds.conf.default
